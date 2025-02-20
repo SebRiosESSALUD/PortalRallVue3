@@ -6,6 +6,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 <template>
   <HeaderRall />
   <div class="container-fluid" style="margin-top: 50px;">
-    <router-view style="justify-content: center;"> </router-view>
+    <router-view> </router-view>
   </div>
 </template>
