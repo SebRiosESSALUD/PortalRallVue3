@@ -22,19 +22,21 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarLinks">
           <div class="navbar-nav gap-3">
             <a href="#" class="nav-link" @click.prevent="showMenu">MENU</a>
+            <a href="#" class="nav-link" @click.prevent="showEnlaces">ENLACES</a>
             <a href="#" class="nav-link" @click.prevent="showFormatos">FORMATOS</a>
             <a href="#" class="nav-link" @click.prevent="showTransparencia">TRANSPARENCIA</a>
             <router-link to="/pacs" class="nav-link">PACS</router-link>
             <router-link to="/anexos" class="nav-link">ANEXOS</router-link>
             <a href="http://convocatorias.essalud.gob.pe/" 
                target="_blank" 
-               class="nav-link">CONVOCATORIA</a>
+               class="nav-link">CONVOCATORIAS</a>
           </div>
         </div>
       </div>
     </nav>
   
     <!-- Modales -->
+    <EnlacesModal :show="showEnlacesModal" @close="showEnlacesModal = false"/>
     <FormatosModal :show="showFormModal" @close="showFormModal = false"/>
     <TransparenciaModal :show="showTransModal" @close="showTransModal = false"/>
     <MenuPrincipalModal :show="showMenuModal" @close="showMenuModal = false"/>
@@ -43,13 +45,20 @@
   
   <script setup>
   import { ref } from 'vue';
+  import EnlacesModal from './EnlacesModal.vue';
   import FormatosModal from './FormatosModal.vue';
   import TransparenciaModal from './TransparenciaModal.vue';
   import MenuPrincipalModal from './MenuPrincipalModal.vue';
-
+  
+  const showMenuModal = ref(false);
+  const showEnlacesModal = ref(false);
   const showFormModal = ref(false);
   const showTransModal = ref(false);
-  const showMenuModal = ref(false);
+
+  const showEnlaces = () => {
+    showEnlacesModal.value = true;
+    closeMenu();
+  };
   
   const showFormatos = () => {
     showFormModal.value = true;
