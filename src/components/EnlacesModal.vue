@@ -1,10 +1,7 @@
 <template>
   <div v-if="show" class="modal fade show d-block" tabindex="-1">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog modal-xl">
       <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Enlaces</h5>
-        </div>
         <div class="modal-body" id="modalesPrincipales">
           <!-- Contenido del modal de transparencia -->
           <!-- Fila superior recursos humanos -->
