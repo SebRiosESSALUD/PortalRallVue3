@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 <template>
   <HeaderRall />
-  <div class="container-fluid" style="margin-top: 50px;">
+  <div class="container-fluid bg-primary p-2 text-dark bg-opacity-10" style="margin-top: 50px;">
     <router-view> </router-view>
   </div>
 </template>
