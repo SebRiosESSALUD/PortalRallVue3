@@ -16,7 +16,7 @@
               <a href="">Formato convenios y vacaciones</a>
             </div>
             <div class="col">
-              <a href="">Formato Papeletas de Permiso</a>
+              <router-link to="/papeletas">Formato Papeletas</router-link>
             </div>
           </div>
 

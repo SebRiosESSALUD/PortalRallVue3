@@ -32,7 +32,7 @@ export default {
     });
 
     const loadAndFillPDF = async () => {
-      const existingPdfBytes = await fetch("/portalweb/pdfs/papeletasEditableOK.pdf").then(res => res.arrayBuffer());
+      const existingPdfBytes = await fetch("/pdfs/papeletasEditableOK.pdf").then(res => res.arrayBuffer());
     const pdfDoc = await PDFDocument.load(existingPdfBytes);
     pdfDoc.registerFontkit(fontkit);
     
@@ -158,7 +158,7 @@ export default {
   <div class="form-container">
       <div id="formularioSalida" class="p-4 border rounded">
         <div class="text-center">
-          <img src="../assets/icons/logoform.png" alt="Logo EsSalud" class="logo" />
+          <img src="/public/logo-main.png" alt="Logo EsSalud" class="logo" />
           <h3>RED ASISTENCIAL LA LIBERTAD</h3>
           <h4>HOSPITAL BICENTENARIO CHAO</h4>
           <h5>PAPELETA DE AUTORIZACIÓN DE SALIDA</h5>
