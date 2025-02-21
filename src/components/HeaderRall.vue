@@ -30,6 +30,12 @@
             <a href="http://convocatorias.essalud.gob.pe/" 
                target="_blank" 
                class="nav-link">CONVOCATORIAS</a>
+              <a href="https://10.15.4.25/index.php/login" 
+              target="_blank" 
+              class="nav-link">CLOUD</a>
+              <a href="https://outlook.live.com/mail/" 
+              target="_blank" 
+              class="nav-link">CORREO</a>
           </div>
         </div>
       </div>
