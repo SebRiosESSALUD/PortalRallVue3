@@ -6,17 +6,20 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 <template>
 
-<header>
-  <HeaderRall/>
-</header>
+<div class="fondo">
+  <header>
+    <HeaderRall/>
+  </header>
 
-<body class="cuerpoPrincipal">
-  <router-view></router-view>
-</body>
+  <body class="cuerpoPrincipal">
+    <router-view></router-view>
+  </body>
 
-<footer>
-  <FooterRall/>
-</footer>
+  <footer>
+    <FooterRall/>
+  </footer>
+</div>
+
 </template>
 
 <style lang="scss">

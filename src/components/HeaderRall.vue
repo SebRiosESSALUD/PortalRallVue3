@@ -1,5 +1,5 @@
 <template>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" style="justify-content: center;">
       <div class="container-fluid">
         <!-- Logo y nombre -->
         <div class="d-flex align-items-center">
@@ -88,6 +88,12 @@
     max-width: 250px;
     height: auto;
     margin-right: 1rem;
+  }
+
+  .navbar {
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 10px 10px 31px -15px rgba(0,0,0,0.75);
   }
   
   .navbar-nav {
