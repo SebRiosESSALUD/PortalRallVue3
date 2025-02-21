@@ -1,4 +1,9 @@
+.fondo {
+    background-color: rgb(147, 221, 255);
+}
+
 .cuerpoPrincipal {
     padding: 20px;
     background-color: rgb(147, 221, 255);
+    min-height: 100dvh;
 }

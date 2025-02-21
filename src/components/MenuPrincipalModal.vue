@@ -1,6 +1,6 @@
 <template>
     <div v-if="show" class="modal fade show d-block" tabindex="-1">
-      <div class="modal-dialog modal-lg">
+      <div class="modal-dialog modal-xl">
         <div class="modal-content">
           
           <div class="modal-body" id="modalesPrincipales">
@@ -178,10 +178,12 @@
                 target="_blank">
                   Gestión de la Calidad</a>
               </div>
-              <div href="http://10.15.4.25/cloud/index.php/s/MTGK6dgHt5s7Hwj?path=%2FIETSI" 
-              target="_blank">
-                <a href="">
-                  IETSI</a>
+              <div class="col">
+                <div href="http://10.15.4.25/cloud/index.php/s/MTGK6dgHt5s7Hwj?path=%2FIETSI" 
+                target="_blank">
+                  <a href="">
+                    IETSI</a>
+                </div>
               </div>
               <div class="col">
                 <a href="http://10.15.4.25/cloud/index.php/s/MTGK6dgHt5s7Hwj?path=%2FOBSERVACIONES%20SUSALUD" 
@@ -301,6 +303,18 @@
   </script>
   
   <style>
+
+  .col a {
+    color: black;
+    text-decoration: none;
+    transition: 0.3s ease;
+  }
+
+  .col a:hover {
+    color: blue;
+    font-size: 120%;
+  }
+
   .modal.show {
     background-color: rgba(0, 0, 0, 0.5);
   }
