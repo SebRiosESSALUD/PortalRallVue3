@@ -29,10 +29,9 @@
             <router-link to="/anexos" class="nav-link">ANEXOS</router-link>
             <a href="http://convocatorias.essalud.gob.pe/" 
                target="_blank" 
-               class="nav-link">CONVOCATORIAS</a>
-              <a href="https://outlook.live.com/mail/" 
-              target="_blank" 
-              class="nav-link">CORREO</a>
+               class="nav-link">CONVOCATORIAS
+            </a>
+            <a href="#" class="nav-link" @click.prevent="showCorreo">CORREO</a>
           </div>
         </div>
       </div>
@@ -43,6 +42,7 @@
     <FormatosModal :show="showFormModal" @close="showFormModal = false"/>
     <TransparenciaModal :show="showTransModal" @close="showTransModal = false"/>
     <MenuPrincipalModal :show="showMenuModal" @close="showMenuModal = false"/>
+    <CorreoModal :show="showCorreoModal" @close="showCorreoModal = false"/>
 
   </template>
   
@@ -52,11 +52,13 @@
   import FormatosModal from './FormatosModal.vue';
   import TransparenciaModal from './TransparenciaModal.vue';
   import MenuPrincipalModal from './MenuPrincipalModal.vue';
+  import CorreoModal from './modals/CorreosModal.vue';
   
   const showMenuModal = ref(false);
   const showEnlacesModal = ref(false);
   const showFormModal = ref(false);
   const showTransModal = ref(false);
+  const showCorreoModal = ref(false);
 
   const showEnlaces = () => {
     showEnlacesModal.value = true;
@@ -75,6 +77,11 @@
 
   const showMenu = () => {
     showMenuModal.value = true;
+    closeMenu();
+  };
+
+  const showCorreo = () => {
+    showCorreoModal.value = true;
     closeMenu();
   };
   
