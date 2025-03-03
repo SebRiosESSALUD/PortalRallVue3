@@ -1,7 +1,7 @@
 <template>
 <div class="container-fluid anexos-container mt-4 full-height">
-      <div class="row transition">
-        <!-- Lista de hospitales -->
+      <div class="row ">
+        <!-- Lista de hospitales 
         <div :class="selectedHospital ? 'col hospital-list slide-left' : 'col-md-12 hospital-list'">
           <h3>Hospitales en La Libertad</h3>
           <ul class="list-group">
@@ -17,7 +17,7 @@
           </ul>
         </div>
         
-        <!-- Lista de anexos -->
+        <!-- Lista de anexos 
         <div class="col text-center" v-if="selectedHospital">
           <h3>Anexos de {{ selectedHospital.nombre }}</h3>
           <ul class="list-group">
@@ -27,8 +27,42 @@
           </ul>
           <button class="btn btn-secondary mt-3" @click="selectedHospital = null">Volver</button>
         </div>
+      </div>-->
+
+      <!-- Lista de hospitales con acordeón de anexos -->
+      <div class="col-md-12 hospital-list">
+        <h3>Hospitales en La Libertad</h3>
+        <ul class="list-group">
+
+          <li
+            v-for="hospital in hospitales"
+            :key="hospital.id"
+            class="list-group-item list-group-item-action"
+          >
+          <div class="d-flex justify-content-between align-items-center">
+            <span @click="toggleHospital(hospital)" class="hospital-name">
+              {{ hospital.nombre }}
+            </span>
+            <button class="btn btn-link" @click="selectHospital(hospital)">
+              {{ hospital.expanded ? "▲" : "▼" }}
+            </button>
+          </div>
+
+          <!-- Acordeón de anexos -->
+          <transition name="fade">
+            <ul v-if="hospital.expanded" class="list-group mt-2">
+              <li v-for="anexo in hospital.anexos" :key="anexo.numero" class="list-group-item">
+                {{ anexo.numero }} - {{ anexo.descripcion }}
+              </li>
+            </ul>
+          </transition>
+
+          </li>
+        </ul>
       </div>
-    </div>
+  </div>
+</div>
+
   </template>
   
   <script>
@@ -46,7 +80,7 @@
     },
     methods: {
       selectHospital(hospital) {
-        this.selectedHospital = hospital;
+        hospital.expanded = !hospital.expanded;
       },
     },
   };
@@ -59,5 +93,7 @@
     background-color: #f8f9fa;
     border-radius: 8px;
   }
+
+  
   </style>
   
