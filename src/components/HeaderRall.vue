@@ -67,9 +67,18 @@
           <li class="nav-item">
             <router-link to="/anexos" class="nav-link active">ANEXOS</router-link>
           </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">Opción 3</a>
+
+          <!-- Dropdown Recursos Humanos -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#">
+              <span>CORREOS</span><i class="bi bi-envelope-at-fill"></i>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" target="blank" href="https://correo.essalud.gob.pe/"><span>Zymbra</span></a></li>
+              <li><a class="dropdown-item" target="blank" href="https://go.microsoft.com/fwlink/p/?linkid=2125442">Outlook</a></li>
+            </ul>
           </li>
+
         </ul>
       </div>
     </div>
@@ -168,5 +177,10 @@ export default {
 
 .dropdown:hover .dropdown-menu {
   display: block; /* Mostrar al pasar el cursor */
+}
+
+i{
+  margin-left: 10px;
+  color: rgb(0, 38, 252);
 }
 </style>
