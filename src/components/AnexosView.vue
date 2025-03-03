@@ -17,7 +17,7 @@
           </ul>
         </div>
         
-        <!-- Lista de anexos 
+        <!- Lista de anexos 
         <div class="col text-center" v-if="selectedHospital">
           <h3>Anexos de {{ selectedHospital.nombre }}</h3>
           <ul class="list-group">
