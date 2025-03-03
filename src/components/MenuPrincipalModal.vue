@@ -1,9 +1,6 @@
 <template>
     <div v-if="show" class="modal fade show d-block" tabindex="-1">
-      <div class="modal-dialog modal-xl">
-        <div class="modal-content">
-          
-          <div class="modal-body" id="modalesPrincipales">
+          <div class="modal-body">
             <!-- Contenido del modal de transparencia -->
             
             <!-- Fila Asistenciales -->
@@ -264,8 +261,6 @@
             </div>
           </div>
         </div>
-      </div>
-    </div>
   </template>
   
   <script setup>
@@ -303,6 +298,14 @@
   </script>
   
   <style>
+  .modal-body {
+    border-radius: 20px;
+    background-color: white;
+    display: flex;
+    position: relative;
+
+  }
+
 
   .col a {
     color: black;
@@ -313,10 +316,6 @@
   .col a:hover {
     color: blue;
     font-size: 120%;
-  }
-
-  .modal.show {
-    background-color: rgba(0, 0, 0, 0.5);
   }
   
   .list-group {
