@@ -18,7 +18,7 @@
             <div class="col">
                 <a id="enlaceModalFormatos"  target="_blank" href="https://go.microsoft.com/fwlink/p/?linkid=2125442&clcid=0x40A&culture=es-es&country=es">
                 Outlook
-                </a>
+                </a> 
             </div>
 
             <div class="col">
