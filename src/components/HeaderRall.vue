@@ -12,9 +12,7 @@
         <ul class="nav">
           <!-- Dropdown Asistenciales -->
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" 
-               role="button" data-bs-toggle="dropdown"
-               aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="#">
               Asistenciales
             </a>
             <ul class="dropdown-menu">
@@ -35,9 +33,7 @@
 
           <!-- Dropdown Administrativos -->
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" 
-               role="button" data-bs-toggle="dropdown"
-               aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="#">
               Administrativos
             </a>
             <ul class="dropdown-menu">
@@ -54,9 +50,7 @@
 
           <!-- Dropdown Recursos Humanos -->
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" 
-               role="button" data-bs-toggle="dropdown"
-               aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="#">
               Recursos Humanos
             </a>
             <ul class="dropdown-menu">
@@ -90,9 +84,7 @@ export default {
   name: 'NavBar',
   async mounted() {
     await nextTick();
-    document.querySelectorAll('.dropdown-toggle').forEach(element => {
-      new bootstrap.Dropdown(element);
-    });
+    // No es necesario inicializar los dropdowns con JavaScript si usamos solo CSS para el hover
   }
 }
 </script>
@@ -171,5 +163,10 @@ export default {
   margin-top: 0 !important;
   border: 1px solid #dee2e6;
   border-radius: 0.25rem;
+  display: none; /* Ocultar por defecto */
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block; /* Mostrar al pasar el cursor */
 }
 </style>
