@@ -7,7 +7,7 @@
       </div>
 
       <div class="titulo">
-        <h3>Red Asistencial La Libertad</h3>
+        <h2>Red Asistencial La Libertad</h2>
       </div>
 
       <!-- Opciones derecha -->
@@ -15,13 +15,22 @@
         <ul class="nav">
           <!-- Dropdowns dinámicos desde JSON -->
           <li v-for="dropdown in dropdowns" :key="dropdown.label" class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle">
+            <a 
+              class="nav-link dropdown-toggle" 
+              href="#"
+              @mouseover="showDropdown($event)"
+              @mouseout="hideDropdown($event)"
+            >
               {{ dropdown.label }}
             </a>
             <ul class="dropdown-menu">
               <li 
                 v-for="item in dropdown.items" :key="item.href">
-                <a class="dropdown-item" target="blank" :href="item.href">
+                <a 
+                  class="dropdown-item" 
+                  target="blank" 
+                  :href="item.href"
+                >
                   {{ item.label }}
                 </a>
               </li>
@@ -30,24 +39,50 @@
 
           <!-- Enlaces fijos -->
           <li class="nav-item">
-            <router-link to="/pacs" class="nav-link active">PACS</router-link>
+            <router-link 
+              to="/pacs" 
+              class="nav-link fixed-link"
+            >
+              PACS
+            </router-link>
           </li>
           <li class="nav-item">
-            <router-link to="/anexos" class="nav-link active">ANEXOS</router-link>
+            <router-link 
+              to="/anexos" 
+              class="nav-link fixed-link"
+            >
+              ANEXOS
+            </router-link>
           </li>
 
           <!-- Dropdown de correos (fijo) -->
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#">
+            <a 
+              class="nav-link dropdown-toggle" 
+              href="#"
+              @mouseover="showDropdown($event)"
+              @mouseout="hideDropdown($event)"
+            >
               <i class="bi bi-envelope-at-fill"></i>
             </a>
             <ul class="dropdown-menu">
               <li>
                 <a 
-                  class="dropdown-item" target="blank" href="https://correo.essalud.gob.pe/">Zymbra</a>
+                  class="dropdown-item" 
+                  target="blank" 
+                  href="https://correo.essalid.gob.pe/"
+                >
+                  Zymbra
+                </a>
               </li>
               <li>
-                <a class="dropdown-item" target="blank" href="https://go.microsoft.com/fwlink/p/?linkid=2125442">Outlook</a>
+                <a 
+                  class="dropdown-item" 
+                  target="blank" 
+                  href="https://go.microsoft.com/fwlink/p/?linkid=2125442"
+                >
+                  Outlook
+                </a>
               </li>
             </ul>
           </li>
@@ -64,14 +99,10 @@ export default {
   name: 'NavBar',
   data() {
     return {
-      dropdowns: dropdownData // Asigna los datos del JSON
+      dropdowns: dropdownData
     };
   },
-  async mounted() {
-    await nextTick();
-    // No es necesario inicializar los dropdowns con JavaScript si usamos solo CSS para el hover
-  }
-}
+};
 </script>
 
 <style>
@@ -82,13 +113,14 @@ export default {
   object-fit: contain;
 }
 
-.titulo{
-  color: #0197fc;
+.titulo {
+  color: #004fb7;
   margin-left: 27%;
 }
 
+/* Estilos para enlaces */
 .nav-link {
-  color: #0197fc !important;
+  color: #0197fc;
   padding: 1rem 2rem;
   position: relative;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
@@ -106,26 +138,46 @@ export default {
   transition: transform 0.3s ease;
 }
 
+/* Efecto hover para todos los enlaces (incluyendo fijos y dropdowns) */
 .nav-link:hover,
-.nav-link:focus {
+.nav-link:focus,
+.nav-link.dropdown-toggle:hover,
+.nav-link.dropdown-toggle:focus {
   color: #003366 !important;
   font-size: 1.05em;
 }
 
 .nav-link:hover::after,
-.nav-link:focus::after {
+.nav-link:focus::after,
+.dropdown-toggle:hover::after,
+.dropdown-toggle:focus::after {
   transform: scaleX(1);
 }
 
-.nav-link.active {
-  color: #0197fc !important;
-  font-weight: 600;
-  transform: scale(1.02);
+/* Estilos específicos para enlaces fijos (PACS, ANEXOS) */
+.nav-link.fixed-link {
+  color: #0197fc;
+}
+
+.nav-link.fixed-link:hover::after {
+  background-color: #003366;
+}
+
+/* Estilos para ícono de correo */
+.dropdown-toggle > i {
+  color: #0197fc;
+  margin-left: 10px;
+  margin-right: 30px;
+}
+
+.dropdown-toggle:hover > i,
+.dropdown-toggle:focus > i {
+  color: #003366;
 }
 
 /* Estilos para dropdowns */
 .dropdown-item {
-  color: #000 !important;
+  color: #000;
   padding: 0.5rem 1.5rem;
   position: relative;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
@@ -145,12 +197,12 @@ export default {
 
 .dropdown-item:hover,
 .dropdown-item:focus {
-  color: #003366 !important;
+  color: #003366;
   font-size: 1.03em;
 }
 
 .dropdown-menu {
-  margin-top: 0 !important;
+  margin-top: 0;
   border: 1px solid #dee2e6;
   border-radius: 0.25rem;
   display: none;
@@ -158,11 +210,5 @@ export default {
 
 .dropdown:hover .dropdown-menu {
   display: block;
-}
-
-i {
-  margin-left: 10px;
-  margin-right: 30px;
-  color: #0197fc;
 }
 </style>
