@@ -1,4 +1,5 @@
 <template>
+
   <div class="container-fluid anexos-container mt-4 full-height">
     <div class="row">
       <!-- Lista de hospitales con acordeón de anexos -->
@@ -36,8 +37,9 @@
   </div>
 </template>
 
-<script>
-import data from "../assets/data.json";
+  <script>
+  import anexos from "../assets/anexos.json";
+
 
 export default {
   data() {
@@ -46,7 +48,7 @@ export default {
     };
   },
   created() {
-    this.hospitales = data.hospitales;
+    this.hospitales = anexos.hospitales;
   },
   methods: {
     selectHospital(hospital) {
@@ -54,7 +56,9 @@ export default {
     },
   },
 };
+
 </script>
+
   
 <style scoped>
 
