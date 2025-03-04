@@ -1,0 +1,40 @@
+[
+    {
+      "label": "Asistenciales",
+      "items": [
+        { "label": "Atención Primaria", "href": "" },
+        { "label": "Infocal", "href": "" },
+        { "label": "Directiva CITT", "href": "" },
+        { "label": "Acredita", "href": "" },
+        { "label": "SIGI", "href": "" },
+        { "label": "Glosario Estadístico 2022", "href": "" },
+        { "label": "Firma Digital", "href": "" },
+        { "label": "Anapat", "href": "" },
+        { "label": "Referencias", "href": "" },
+        { "label": "SGSS - ESSI", "href": "" },
+        { "label": "Violencia Familiar", "href": "" },
+        { "label": "Estándares CIE 10", "href": "" }
+      ]
+    },
+    {
+      "label": "Administrativos",
+      "items": [
+        { "label": "SIAD", "href": "" },
+        { "label": "SCAI", "href": "" },
+        { "label": "Nube/Cloud", "href": "" },
+        { "label": "Soporte Informático", "href": "" },
+        { "label": "Intranet", "href": "" },
+        { "label": "Sistema Rendiciones", "href": "" },
+        { "label": "Mesa de Partes Digital", "href": "" },
+        { "label": "Exploata", "href": "" }
+      ]
+    },
+    {
+      "label": "Recursos Humanos",
+      "items": [
+        { "label": "Boletas de Pago", "href": "" },
+        { "label": "Ficha Única de Personal", "href": "" },
+        { "label": "Documentos de Gestión", "href": "" }
+      ]
+    }
+  ]

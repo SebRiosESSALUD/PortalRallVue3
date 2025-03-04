@@ -66,7 +66,7 @@
   </template>
   
   <script>
-  import data from "../assets/data.json";
+  import anexos from "../assets/anexos.json";
 
   export default {
     data() {
@@ -76,7 +76,7 @@
       };
     },
     created() {
-      this.hospitales = data.hospitales;
+      this.hospitales = anexos.hospitales;
     },
     methods: {
       selectHospital(hospital) {

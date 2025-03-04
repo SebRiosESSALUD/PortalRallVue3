@@ -10,57 +10,22 @@
       <!-- Opciones derecha -->
       <div class="ms-auto d-flex">
         <ul class="nav">
-          <!-- Dropdown Asistenciales -->
-          <li class="nav-item dropdown">
+          <!-- Dropdowns dinámicos desde JSON -->
+          <li v-for="dropdown in dropdowns" :key="dropdown.label" class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#">
-              Asistenciales
+              {{ dropdown.label }}
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Atención Primaria</a></li>
-              <li><a class="dropdown-item" href="#">Infocal</a></li>
-              <li><a class="dropdown-item" href="#">Directiva CITT</a></li>
-              <li><a class="dropdown-item" href="#">Acredita</a></li>
-              <li><a class="dropdown-item" href="#">SIGI</a></li>
-              <li><a class="dropdown-item" href="#">Glosario Estadístico 2022</a></li>
-              <li><a class="dropdown-item" href="#">Firma Digital</a></li>
-              <li><a class="dropdown-item" href="#">Anapat</a></li>
-              <li><a class="dropdown-item" href="#">Referencias</a></li>
-              <li><a class="dropdown-item" href="#">SGSS - ESSI</a></li>
-              <li><a class="dropdown-item" href="#">Violencia Familiar</a></li>
-              <li><a class="dropdown-item" href="#">Estándares CIE 10</a></li>
+              <li 
+                v-for="item in dropdown.items" :key="item.href">
+                <a class="dropdown-item" :href="item.href">
+                  {{ item.label }}
+                </a>
+              </li>
             </ul>
           </li>
 
-          <!-- Dropdown Administrativos -->
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#">
-              Administrativos
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">SIAD</a></li>
-              <li><a class="dropdown-item" href="#">SCAI</a></li>
-              <li><a class="dropdown-item" href="#">Nube/Cloud</a></li>
-              <li><a class="dropdown-item" href="#">Soporte Informático</a></li>
-              <li><a class="dropdown-item" href="#">Intranet</a></li>
-              <li><a class="dropdown-item" href="#">Sistema Rendiciones</a></li>
-              <li><a class="dropdown-item" href="#">Mesa de Partes Digital</a></li>
-              <li><a class="dropdown-item" href="#">Exploata</a></li>
-            </ul>
-          </li>
-
-          <!-- Dropdown Recursos Humanos -->
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#">
-              Recursos Humanos
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Boletas de Pago</a></li>
-              <li><a class="dropdown-item" href="#">Ficha Única de Personal</a></li>
-              <li><a class="dropdown-item" href="#">Documentos de Gestión</a></li>
-            </ul>
-          </li>
-
-          <!-- Otras opciones del navbar -->
+          <!-- Enlaces fijos -->
           <li class="nav-item">
             <router-link to="/pacs" class="nav-link active">PACS</router-link>
           </li>
@@ -68,17 +33,21 @@
             <router-link to="/anexos" class="nav-link active">ANEXOS</router-link>
           </li>
 
-          <!-- Dropdown Recursos Humanos -->
+          <!-- Dropdown de correos (fijo) -->
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#">
               <i class="bi bi-envelope-at-fill"></i>
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" target="blank" href="https://correo.essalud.gob.pe/"><span>Zymbra</span></a></li>
-              <li><a class="dropdown-item" target="blank" href="https://go.microsoft.com/fwlink/p/?linkid=2125442">Outlook</a></li>
+              <li>
+                <a 
+                  class="dropdown-item" target="blank" href="https://correo.essalud.gob.pe/">Zymbra</a>
+              </li>
+              <li>
+                <a class="dropdown-item" target="blank" href="https://go.microsoft.com/fwlink/p/?linkid=2125442">Outlook</a>
+              </li>
             </ul>
           </li>
-
         </ul>
       </div>
     </div>
@@ -86,11 +55,15 @@
 </template>
 
 <script>
-import { nextTick } from 'vue';
-import * as bootstrap from 'bootstrap';
+import dropdownData from '../assets/header.json';
 
 export default {
   name: 'NavBar',
+  data() {
+    return {
+      dropdowns: dropdownData // Asigna los datos del JSON
+    };
+  },
   async mounted() {
     await nextTick();
     // No es necesario inicializar los dropdowns con JavaScript si usamos solo CSS para el hover
@@ -172,14 +145,14 @@ export default {
   margin-top: 0 !important;
   border: 1px solid #dee2e6;
   border-radius: 0.25rem;
-  display: none; /* Ocultar por defecto */
+  display: none;
 }
 
 .dropdown:hover .dropdown-menu {
-  display: block; /* Mostrar al pasar el cursor */
+  display: block;
 }
 
-i{
+i {
   margin-left: 10px;
   margin-right: 30px;
   color: rgb(0, 38, 252);
