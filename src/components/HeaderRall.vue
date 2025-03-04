@@ -1,18 +1,21 @@
 <template>
   <nav class="navbar bg-light shadow-sm">
-    <div class="container-fluid">
+    <div class="container-fluid d-flex justify-content-between align-items-center">
       <!-- Logo y nombre -->
-      <router-link to="/" class="navbar-brand d-flex align-items-center">
+      <div class="d-flex align-items-center">
         <img src="/logo-main.png" alt="Logo" class="logo-image me-2">
-        <h2 class="mb-0">Red Asistencial La Libertad</h2>
-      </router-link>
+      </div>
+
+      <div class="titulo">
+        <h3>Red Asistencial La Libertad</h3>
+      </div>
 
       <!-- Opciones derecha -->
       <div class="ms-auto d-flex">
         <ul class="nav">
           <!-- Dropdowns dinámicos desde JSON -->
           <li v-for="dropdown in dropdowns" :key="dropdown.label" class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#">
+            <a class="nav-link dropdown-toggle">
               {{ dropdown.label }}
             </a>
             <ul class="dropdown-menu">
@@ -74,9 +77,14 @@ export default {
 <style>
 /* Estilos generales */
 .logo-image {
-  width: 70px;
+  margin: 10px;
   height: 70px;
   object-fit: contain;
+}
+
+.titulo{
+  color: #1c43ad;
+  margin-left: 27%;
 }
 
 .nav-link {
