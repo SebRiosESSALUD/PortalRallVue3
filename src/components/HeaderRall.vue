@@ -18,7 +18,7 @@
             <ul class="dropdown-menu">
               <li 
                 v-for="item in dropdown.items" :key="item.href">
-                <a class="dropdown-item" :href="item.href">
+                <a class="dropdown-item" target="blank" :href="item.href">
                   {{ item.label }}
                 </a>
               </li>
