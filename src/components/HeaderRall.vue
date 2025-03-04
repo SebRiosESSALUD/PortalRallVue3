@@ -37,7 +37,7 @@
             </ul>
           </li>
 
-          <!-- Enlaces fijos -->
+          <!-- Enlaces fijos 
           <li class="nav-item">
             <router-link 
               to="/pacs" 
@@ -53,7 +53,7 @@
             >
               ANEXOS
             </router-link>
-          </li>
+          </li>-->
 
           <!-- Dropdown de correos (fijo) -->
           <li class="nav-item dropdown">

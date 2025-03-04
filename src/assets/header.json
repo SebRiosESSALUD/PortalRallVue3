@@ -13,7 +13,9 @@
         { "label": "Referencias", "href": "" },
         { "label": "SGSS - ESSI", "href": "" },
         { "label": "Violencia Familiar", "href": "" },
-        { "label": "Estándares CIE 10", "href": "" }
+        { "label": "Estándares CIE 10", "href": "" },
+        { "label": "PACS", "href": "/pacs" }
+
       ]
     },
     {
@@ -26,7 +28,9 @@
         { "label": "Intranet", "href": "" },
         { "label": "Sistema Rendiciones", "href": "" },
         { "label": "Mesa de Partes Digital", "href": "" },
-        { "label": "Exploata", "href": "" }
+        { "label": "Exploata", "href": "" },
+        { "label": "Anexos", "href": "/anexos" }
+       
       ]
     },
     {
