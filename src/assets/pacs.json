@@ -30,17 +30,17 @@
             "id": 5,
             "nombre": "La Libertad",
             "hospitals": [
-                { "id": 5, "name": "PAC H. Virgen de la Puerta", "url": "http://172.27.71.6:8080/kWebViewer/main.jsp" },
-                { "id": 6, "name": "PAC H. Victor Lazarte Echegaray", "url": "http://172.26.141.57:8080/kWebViewer/main.jsp" },
+                { "id": 5, "name": "H.E. III Virgen de la Puerta", "url": "http://172.27.71.6:8080/kWebViewer/main.jsp" },
+                { "id": 6, "name": "H.E. Victor Lazarte Echegaray", "url": "http://172.26.141.57:8080/kWebViewer/main.jsp" },
                 { "id": 7, "name": "PAC H. Virú", "url": "http://172.27.40.82:8080/kWebViewer/main.jsp" },
-                { "id": 8, "name": "PAC H. Moche", "url": "http://172.22.17.9:8080/kWebViewer/"},
-                { "id": 9, "name": "PAC H. La Esperanza", "url": "http://172.22.17.9:8080/kWebViewer/"},
-                { "id": 10, "name": "PAC H. Florencia de Mora", "url": "http://172.30.147.93:8080/kWebViewer/main.jsp" },
-                { "id": 11, "name": "PAC H. Albretch", "url": "http://172.30.146.7:8080/kWebViewer/main.jsp" },
+                { "id": 8, "name": "H. I Moche", "url": "http://172.22.17.9:8080/kWebViewer/"},
+                { "id": 9, "name": "H. I La Esperanza", "url": "http://172.22.17.9:8080/kWebViewer/"},
+                { "id": 10, "name": "H. I Florencia de Mora", "url": "http://172.30.147.93:8080/kWebViewer/main.jsp" },
+                { "id": 11, "name": "H. I Albretch", "url": "http://172.30.146.7:8080/kWebViewer/main.jsp" },
                 { "id": 12, "name": "PAC H. Casa Grande", "url": "" },
-                { "id": 13, "name": "PAC Policlínico El Porvenir", "url": "http://172.30.148.14/kWebViewer/main.jsp" },
-                { "id": 14, "name": "PAC H. Victor Larco", "url": "" },
-                { "id": 15, "name": "PAC H. Pacasmayo", "url": "http://172.30.110.75:8080/kWebViewer/main.jsp" }
+                { "id": 13, "name": "P. El Porvenir", "url": "http://172.30.148.14/kWebViewer/main.jsp" },
+                { "id": 14, "name": "P. Victor Larco Herrera", "url": "" },
+                { "id": 15, "name": "H. I Pacasmayo", "url": "http://172.30.110.75:8080/kWebViewer/main.jsp" }
             ]
             },
             {
