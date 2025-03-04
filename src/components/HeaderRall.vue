@@ -83,12 +83,12 @@ export default {
 }
 
 .titulo{
-  color: #1c43ad;
+  color: #0197fc;
   margin-left: 27%;
 }
 
 .nav-link {
-  color: #000 !important;
+  color: #0197fc !important;
   padding: 1rem 2rem;
   position: relative;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
@@ -118,7 +118,7 @@ export default {
 }
 
 .nav-link.active {
-  color: #000 !important;
+  color: #0197fc !important;
   font-weight: 600;
   transform: scale(1.02);
 }
@@ -163,6 +163,6 @@ export default {
 i {
   margin-left: 10px;
   margin-right: 30px;
-  color: rgb(0, 38, 252);
+  color: #0197fc;
 }
 </style>
