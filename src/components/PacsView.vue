@@ -57,7 +57,7 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue';
+import { ref, computed, onMounted } from 'vue';
 
 import provincesData from '../assets/peru-provinces-converted.json';
 
@@ -79,73 +79,36 @@ const tooltipStyles = ref({
   zIndex: 10,
 });
 
-const selectedRegion = ref(null); // Región seleccionada
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Funciones para interactuar con el json de PACs
 
-const pacs = ref({
-        'Loreto': [{ id: 1, name: 'H.I. Yurimaguas', url: 'http://172.26.28.113/kWebViewer/main.jsp' }],
-        'Tumbes': [{ id: 2, name: 'PACs Tumbes', url: 'http://172.26.28.113/kWebViewer/main.jsp' }],
-        'Piura': [],
-        'Lambayeque': [{ id: 4, name: 'PACs Almanzor Aguinaga', url: 'http://172.27.96.110:8080/kWebViewer/' }],
+// Variables reactivas
+const selectedRegion = ref("La Libertad"); // Se inicia en "La Libertad"
+const pacsData = ref([]); // Datos de las regiones desde el JSON
 
-        'La Libertad': [{ id: 5, name: 'PAC H. Virgen de la Puerta', url: 'http://172.27.71.6:8080/kWebViewer/main.jsp' },
-                        { id: 6, name: 'PAC H. Victor Lazarte Echegaray', url: 'http://172.26.141.57:8080/kWebViewer/main.jsp' },
-                        { id: 7, name: 'PAC H. Virú', url: 'http://172.27.40.82:8080/kWebViewer/main.jsp' },
-                        { id: 8, name: 'PAC H. Moche', url: 'http://172.30.145.15:8080/kWebViewer/main.jsp' },
-                        { id: 9, name: 'PAC H. La Esperanza', url: 'http://172.30.149.149:8080/kWebViewer/main.jsp' },
-                        { id: 10, name: 'PAC H. Florencia de Mora', url: 'http://172.30.147.93:8080/kWebViewer/main.jsp' },
-                        { id: 11, name: 'PAC H. Albretch', url: 'http://172.30.146.7:8080/kWebViewer/main.jsp' },
-                        { id: 12, name: 'PAC H. Casa Grande', url: '' },
-                        { id: 13, name: 'PAC Policlínico El Porvenir', url: 'http://172.30.148.14/kWebViewer/main.jsp' },
-                        { id: 14, name: 'PAC H. Victor Larco', url: '' },
-                        { id: 15, name: 'PAC H. Pacasmayo', url: 'http://172.30.110.75:8080/kWebViewer/main.jsp' },
-        ],
+// Cargar datos desde JSON cuando el componente se monte
+onMounted(async () => {
+  try {
+    const response = await fetch('/src/assets/pacs.json'); // Ruta del JSON
+    const data = await response.json();
+    pacsData.value = data.regiones; // Guardamos el array de regiones
 
-        'Ancash': [{ id: 16, name: 'PACs Chimbote', url: 'http://172.26.53.246:8080/kWebViewer/' }],
-
-        'Lima': [{ id: 17, name: 'PACs Almenara', url: 'http://172.22.17.9:8080/kWebViewer/' },
-                  { id: 18, name: 'PACs Rebagliati', url: 'http://172.25.42.5:8080/kWebViewer/main.jsp' },
-                  { id: 19, name: 'PACs NACIONAL', url: 'http://10.15.4.30:8080/rall3old/172.26.147.24/kWebViewer' },
-                  { id: 20, name: 'PACs Sabogal', url: 'http://172.22.55.100:8080/kWebViewer/' },
-                  { id: 21, name: 'PACs Mongrut', url: 'http://172.24.27.234/kWebViewer/main.jsp?lang=es' },
-                  { id: 22, name: 'PACs INCOR', url: 'http://172.25.10.179:8080/kWebViewer/main.jsp' }
-        ],
-
-        'Ica': [],
-        'Arequipa': [],
-        'Moquegua': [{ id: 25, name: 'PACs Moquegua', url: 'http://172.26.70.120:8080/kWebViewer/' }],
-        'Cajamarca': [{ id: 26, name: 'PACs H. II Cajamarca', url: 'http://172.26.57.115:8080/kWebViewer/main.jsp' }],
-        'Huánuco': [],
-        'Pasco': [],
-        'Junín': [],
-        'Huancavelica': [],
-        'Ayacucho': [],
-        'Apurímac': [{ id: 32, name: 'PAC H. Abancay', url: 'http://172.27.84.22/kWebViewer/main.jsp' },
-                    { id: 33, name: 'PAC Hosp. I Andahuaylas', url: 'http://172.30.11.11//kWebViewer/main.jsp' },
-        ],
-        'Cusco': [{ id: 34, name: 'PACs Cusco', url: 'http://172.26.18.5:8080/kWebViewer/main.jsp' }],
-        'Puno': [],
-        'Amazonas': [],
-        'San Martín': [{ id: 37, name: 'H. II Tarapoto', url: 'http://172.27.83.17:8080/kWebViewer/main.jsp' },
-                      { id: 38, name: 'H. I Juanji', url: 'http://172.30.210.95:8080/kWebViewer/main.jsp' },
-        ],
-        'Ucayali': [],
-        'Madre de Dios': [],
-        'Tacna': [],
-        /*
-        'Default': [
-          { id: 1, name: 'PAC H. Virgen de La Puerta' },
-          { id: 2, name: 'PAC H. Victor Lazarte Echegaray' },
-          { id: 3, name: 'PAC H. Virú' },
-          { id: 4, name: 'PAC H. Moche' }
-        ]*/
+    // Verificar si "La Libertad" existe y establecerla como la región por defecto
+    const region = pacsData.value.find(region => region.nombre === "La Libertad");
+    if (region) {
+      selectedRegion.value = region.nombre; // Asignar "La Libertad" como región inicial
+    }
+  } catch (error) {
+    console.error('Error cargando los datos de PACs:', error);
+  }
 });
 
-// Computed property para mostrar la lista de PACs según la región seleccionada
+// Computed property para obtener la lista de hospitales de la región seleccionada
 const pacsToShow = computed(() => {
-  return selectedRegion.value && pacs.value[selectedRegion.value]
-    ? pacs.value[selectedRegion.value]
-    : pacs.value['Default'];
+  const region = pacsData.value.find(region => region.nombre === selectedRegion.value);
+  return region ? region.hospitals : [];
 });
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // Métodos
 const handleHover = (province) => {
