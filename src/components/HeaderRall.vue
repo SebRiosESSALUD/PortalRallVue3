@@ -181,6 +181,7 @@ export default {
 
 i{
   margin-left: 10px;
+  margin-right: 30px;
   color: rgb(0, 38, 252);
 }
 </style>
