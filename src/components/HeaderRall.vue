@@ -71,7 +71,7 @@
           <!-- Dropdown Recursos Humanos -->
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#">
-              <span>CORREOS</span><i class="bi bi-envelope-at-fill"></i>
+              <i class="bi bi-envelope-at-fill"></i>
             </a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" target="blank" href="https://correo.essalud.gob.pe/"><span>Zymbra</span></a></li>
