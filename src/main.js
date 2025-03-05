@@ -11,7 +11,7 @@ import TransparenciaView from './components/TransparenciaModal.vue'
 
 //rutas
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory('/portalweb/'), // Agregado el prefijo correcto para producción
   routes: [
     { path: '/pacs', component: PacsView },
     { path: '/anexos', component: AnexosView },

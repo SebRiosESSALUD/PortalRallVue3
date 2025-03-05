@@ -89,7 +89,7 @@ const pacsData = ref([]); // Datos de las regiones desde el JSON
 // Cargar datos desde JSON cuando el componente se monte
 onMounted(async () => {
   try {
-    const response = await fetch('/pacs.json'); // Ruta del JSON en `public/`
+    const response = await fetch('/portalweb/pacs.json'); // Ruta del JSON en `public/`
     
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);

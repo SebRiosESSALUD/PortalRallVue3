@@ -102,7 +102,7 @@ export default {
   },
   async created() {
     try {
-      const response = await fetch("/header.json"); // ✅ Carga desde `public/`
+      const response = await fetch('/portalweb/header.json'); // ✅ Carga desde `public/`
       if (!response.ok) throw new Error("No se pudo cargar header.json");
       
       const data = await response.json();

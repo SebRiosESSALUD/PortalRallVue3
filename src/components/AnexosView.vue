@@ -46,7 +46,7 @@ export default {
     // Función para obtener el JSON desde public/
     const fetchData = async () => {
       try {
-        const response = await fetch("/anexos.json");
+        const response = await fetch('/portalweb/anexos.json');
 
         if (!response.ok) {
           throw new Error(`Error HTTP! Status: ${response.status}`);
