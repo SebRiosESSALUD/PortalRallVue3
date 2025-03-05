@@ -93,17 +93,31 @@
 </template>
 
 <script>
-import dropdownData from '../assets/header.json';
-
 export default {
-  name: 'NavBar',
+  name: "NavBar",
   data() {
     return {
-      dropdowns: dropdownData
+      dropdowns: [],
     };
   },
+  async created() {
+    try {
+      const response = await fetch("/header.json"); // ✅ Carga desde `public/`
+      if (!response.ok) throw new Error("No se pudo cargar header.json");
+      
+      const data = await response.json();
+      console.log("✅ header.json cargado:", data); // 🛠️ Debug en consola
+
+      this.dropdowns = data;
+    } catch (error) {
+      console.error("❌ Error al cargar header.json:", error);
+    }
+  },
+  
 };
 </script>
+
+
 
 <style>
 /* Estilos generales */

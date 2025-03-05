@@ -1,5 +1,4 @@
 <template>
-
   <div class="container-fluid anexos-container mt-4 full-height">
     <div class="row">
       <!-- Lista de hospitales con acordeón de anexos -->
@@ -37,26 +36,49 @@
   </div>
 </template>
 
-  <script>
-  import anexos from "../assets/anexos.json";
-
+<script>
+import { ref, onMounted } from "vue";
 
 export default {
-  data() {
+  setup() {
+    const hospitales = ref([]);
+
+    // Función para obtener el JSON desde public/
+    const fetchData = async () => {
+      try {
+        const response = await fetch("/anexos.json");
+
+        if (!response.ok) {
+          throw new Error(`Error HTTP! Status: ${response.status}`);
+        }
+
+        const data = await response.json();
+
+        if (!data.hospitales || !Array.isArray(data.hospitales)) {
+          throw new Error("El JSON no contiene un array de 'hospitales'.");
+        }
+
+        hospitales.value = data.hospitales; // Asignamos los hospitales correctamente
+        console.log("✅ anexos.json cargado correctamente:", hospitales.value);
+
+      } catch (error) {
+        console.error("❌ Error al cargar anexos.json:", error);
+      }
+    };
+
+    // Método para manejar la apertura del acordeón
+    const selectHospital = (hospital) => {
+      hospital.expanded = !hospital.expanded;
+    };
+
+    onMounted(fetchData);
+
     return {
-      hospitales: [],
+      hospitales,
+      selectHospital,
     };
   },
-  created() {
-    this.hospitales = anexos.hospitales;
-  },
-  methods: {
-    selectHospital(hospital) {
-      hospital.expanded = !hospital.expanded;
-    },
-  },
 };
-
 </script>
 
   
