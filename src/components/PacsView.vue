@@ -89,15 +89,28 @@ const pacsData = ref([]); // Datos de las regiones desde el JSON
 // Cargar datos desde JSON cuando el componente se monte
 onMounted(async () => {
   try {
-    const response = await fetch('/src/assets/pacs.json'); // Ruta del JSON
+    const response = await fetch('/pacs.json'); // Ruta del JSON en `public/`
+    
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+
     const data = await response.json();
+    
+    if (!data.regiones || !Array.isArray(data.regiones)) {
+      throw new Error('Formato incorrecto: El JSON no contiene "regiones".');
+    }
+
     pacsData.value = data.regiones; // Guardamos el array de regiones
 
     // Verificar si "La Libertad" existe y establecerla como la región por defecto
     const region = pacsData.value.find(region => region.nombre === "La Libertad");
     if (region) {
       selectedRegion.value = region.nombre; // Asignar "La Libertad" como región inicial
+    } else {
+      console.warn('No se encontró la región "La Libertad" en los datos.');
     }
+
   } catch (error) {
     console.error('Error cargando los datos de PACs:', error);
   }
