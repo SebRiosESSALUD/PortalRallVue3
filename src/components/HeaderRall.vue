@@ -26,13 +26,25 @@
             <ul class="dropdown-menu">
               <li 
                 v-for="item in dropdown.items" :key="item.href">
-                <a 
+                <a v-if="item.label != 'PACS' & item.label != 'ANEXOS'" 
                   class="dropdown-item" 
                   target="blank" 
                   :href="item.href"
                 >
                   {{ item.label }}
                 </a>
+                <router-link v-else-if="item.label == 'Anexos'"
+                  to="/anexos"
+                  class="dropdown-item"
+                >
+                ANEXOS
+                </router-link>
+                <router-link v-else
+                  to="/pacs"
+                  class="dropdown-item"
+                >
+                PACS
+                </router-link>
               </li>
             </ul>
           </li>
