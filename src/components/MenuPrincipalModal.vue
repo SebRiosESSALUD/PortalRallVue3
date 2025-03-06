@@ -8,9 +8,7 @@
               <h3 style="background-color: #3264a8; 
                 border-radius: 10px; 
                 color: white;" 
-                > 
-                
-              Asistenciales</h3>
+                >Asistenciales</h3>
               <div class="col">
                 <a href="http://10.15.4.30:8080/rall2/atencionprimaria.html" 
                   target="_blank"
