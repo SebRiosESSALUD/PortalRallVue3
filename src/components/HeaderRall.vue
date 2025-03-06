@@ -7,7 +7,7 @@
       </div>
 
       <div class="titulo">
-        <h2>Red Asistencial La Libertad</h2>
+        <p>Red Asistencial La Libertad</p>
       </div>
 
       <!-- Opciones derecha -->
@@ -116,6 +116,9 @@ export default {
 .titulo {
   color: #004fb7;
   margin-left: 27%;
+  font-weight: 700;
+  font-size: 20pt;
+  text-transform:uppercase;
 }
 
 /* Estilos para enlaces */
