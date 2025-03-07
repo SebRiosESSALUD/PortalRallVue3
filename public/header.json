@@ -2,43 +2,39 @@
     {
       "label": "Asistenciales",
       "items": [
-        { "label": "Atención Primaria", "href": "" },
-        { "label": "Infocal", "href": "" },
-        { "label": "Directiva CITT", "href": "" },
-        { "label": "Acredita", "href": "" },
-        { "label": "SIGI", "href": "" },
-        { "label": "Glosario Estadístico 2022", "href": "" },
-        { "label": "Firma Digital", "href": "" },
-        { "label": "Anapat", "href": "" },
-        { "label": "Referencias", "href": "" },
-        { "label": "SGSS - ESSI", "href": "" },
-        { "label": "Violencia Familiar", "href": "" },
-        { "label": "Estándares CIE 10", "href": "" },
-        { "label": "PACS", "href": "/portalweb/pacs" }
-
+        { "label": "PACS", "href": "/portalweb/pacs" },
+        { "label": "SGSS - ESSI", "href": "http://10.56.1.158/sgss/servlet/hmain" },
+        { "label": "Referencias", "href": "http://10.0.0.166:7777/Referencia/html/index.html" },
+        { "label": "Anapat", "href": "http://anatpat.essalud/ANATPAT/" },
+        { "label": "SIGI", "href": "http://172.20.0.122:8080/cittcontrol/" },
+        { "label": "Infocal", "href": "http://infocal.essalud/index.php" },
+        { "label": "Sin Anemia", "href": "http://10.0.0.217/" },
+        { "label": "Violencia Familiar", "href": "http://10.0.0.218/" }
       ]
     },
     {
       "label": "Administrativos",
       "items": [
-        { "label": "SIAD", "href": "" },
-        { "label": "SCAI", "href": "" },
-        { "label": "Nube/Cloud", "href": "" },
-        { "label": "Soporte Informático", "href": "" },
-        { "label": "Intranet", "href": "" },
-        { "label": "Sistema Rendiciones", "href": "" },
-        { "label": "Mesa de Partes Digital", "href": "" },
-        { "label": "Exploata", "href": "" },
-        { "label": "Anexos", "href": "/portalweb/anexos" }
-       
+        { "label": "SGD", "href": "https://sgd.essalud.gob.pe/sgd/login.do" },
+        { "label": "Intranet", "href": "http://intranet.essalud/portal/modules/news/" },
+        { "label": "Sistema Rendiciones", "href": "http://10.15.4.30:8080/rendiciones/#/login" },
+        { "label": "Mesa de Partes Digital", "href": "https://mpv.essalud.gob.pe/Login/Index " },
+        { "label": "Explota", "href": "http://appsgasistexpl.essalud.gob.pe/explotaDatos/index.html" }
       ]
     },
     {
       "label": "Recursos Humanos",
       "items": [
-        { "label": "Boletas de Pago", "href": "" },
-        { "label": "Ficha Única de Personal", "href": "" },
-        { "label": "Documentos de Gestión", "href": "" }
+        { "label": "Boletas de Pago", "href": "http://10.15.4.30:8080/sgper2/" },
+        { "label": "Convocatorias", "href": "http://convocatorias.essalud.gob.pe/" }
+      ]
+    },
+    {
+      "label": "Soporte Informático",
+      "items": [
+        { "label": "SCAI", "href": "http://10.15.4.30:8080/scai/" },
+        { "label": "Nube/Cloud", "href": "http://10.15.4.25/index.php/login" },
+        { "label": "Anexos", "href": "/portalweb/anexos" }
       ]
     }
   ]
