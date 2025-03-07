@@ -28,7 +28,7 @@
                 v-for="item in dropdown.items" :key="item.href">
                 <a v-if="item.label != 'PACS' & item.label != 'ANEXOS'" 
                   class="dropdown-item" 
-                  target="blank" 
+                  target="_blank" 
                   :href="item.href"
                 >
                   {{ item.label }}
@@ -81,7 +81,7 @@
               <li>
                 <a 
                   class="dropdown-item" 
-                  target="blank" 
+                  target="_blank" 
                   href="https://correo.essalud.gob.pe/"
                 >
                   Zymbra
@@ -90,7 +90,7 @@
               <li>
                 <a 
                   class="dropdown-item" 
-                  target="blank" 
+                  target="_blank" 
                   href="https://go.microsoft.com/fwlink/p/?linkid=2125442"
                 >
                   Outlook
@@ -105,6 +105,15 @@
 </template>
 
 <script>
+import { onMounted } from 'vue';
+
+const vNewTab = {
+  mounted(el) {
+    el.setAttribute('target', '_blank');
+    el.setAttribute('rel', 'noopener noreferrer');
+  }
+};
+
 export default {
   name: "NavBar",
   data() {
