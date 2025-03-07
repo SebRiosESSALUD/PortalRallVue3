@@ -19,7 +19,7 @@
         { "label": "Intranet", "href": "http://intranet.essalud/portal/modules/news/" },
         { "label": "Sistema Rendiciones", "href": "http://10.15.4.30:8080/rendiciones/#/login" },
         { "label": "Mesa de Partes Digital", "href": "https://mpv.essalud.gob.pe/Login/Index " },
-        { "label": "Explota", "href": "http://appsgasistexpl.essalud.gob.pe/explotaDatos/index.html" }   
+        { "label": "Explota", "href": "http://appsgasistexpl.essalud.gob.pe/explotaDatos/index.html" }
       ]
     },
     {
