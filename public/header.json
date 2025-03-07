@@ -2,7 +2,7 @@
     {
       "label": "Asistenciales",
       "items": [
-        { "label": "PACS", "href": "/portalweb/pacs" },
+        { "label": "PACS", "href": "/pacs" },
         { "label": "SGSS - ESSI", "href": "http://10.56.1.158/sgss/servlet/hmain" },
         { "label": "Referencias", "href": "http://10.0.0.166:7777/Referencia/html/index.html" },
         { "label": "Anapat", "href": "http://anatpat.essalud/ANATPAT/" },
@@ -36,7 +36,7 @@
       "items": [
         { "label": "SCAI", "href": "http://10.15.4.30:8080/scai/" },
         { "label": "Nube/Cloud", "href": "http://10.15.4.25/index.php/login" },
-        { "label": "Anexos", "href": "/portalweb/anexos" }
+        { "label": "Anexos", "href": "/anexos" }
       ]
     }
   ]

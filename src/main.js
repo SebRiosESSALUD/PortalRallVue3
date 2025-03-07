@@ -9,32 +9,27 @@ import AnexosView from './components/AnexosView.vue'
 import PapeletasView from './components/PapeletaRall.vue'
 import TransparenciaView from './components/TransparenciaModal.vue'
 
-//rutas
+// Configuración del router
 const router = createRouter({
-  history: createWebHistory('/portalweb/'), // Agregado el prefijo correcto para producción
+  history: createWebHistory('/portalweb/'), // Base correcta
   routes: [
-    { path: '/pacs', component: PacsView },
+    { path: '/pacs', component: PacsView }, // Ruta relativa a /portalweb/
     { path: '/anexos', component: AnexosView },
     { path: '/papeletas', component: PapeletasView },
-    { path: '/transparencia', component: TransparenciaView},
+    { path: '/transparencia', component: TransparenciaView },
     { path: '/', redirect: '/pacs' }
   ]
 })
 
-// Integración global de BootstrapVueNext
+// Integración de BootstrapVueNext
 import * as Bootstrap from 'bootstrap'
 import * as BVnext from 'bootstrap-vue-next'
 
 const app = createApp(App)
 
-// Registrar BootstrapVueNext como plugin global
 app.use(BVnext.default, {
-  bootstrap: Bootstrap,
-  // Opciones adicionales (ej. tema, idioma)
+  bootstrap: Bootstrap
 })
 
-// Registrar router después de los plugins
 app.use(router)
-
-// Montar la app
 app.mount('#app')
