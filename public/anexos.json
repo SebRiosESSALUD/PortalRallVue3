@@ -2,6 +2,15 @@
   "hospitales": [
     {
       "id": 1,
+      "nombre": "Sede Administrativa",
+      "anexos": [
+        { "numero": 2046, "descripcion": "OSI" },
+        { "numero": 2051, "descripcion": "OSI CONTINGENCIA" },
+        { "numero": 2001, "descripcion": "VIGILANCIA" }
+      ]
+    },
+    {
+      "id": 2,
       "nombre": "Hospital Bicentenario Chao",
       "anexos": [
         { "numero": 3001, "descripcion": "JEFATURA ADMISIÓN Y CITAS" },

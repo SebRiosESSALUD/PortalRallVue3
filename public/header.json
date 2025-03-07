@@ -11,7 +11,7 @@
         { "label": "Sin Anemia", "href": "http://10.0.0.217/" },
         { "label": "Violencia Familiar", "href": "http://10.0.0.218/" },
         { "label": "IETSI", "href": "https://ietsi.essalud.gob.pe/farmacovigilancia-y-tecnovigilancia/" },
-        { "label": "Sist. Reg. HECHOS", "href": "https://portalrcm.reniec.gob.pe/hechosvitales/Login.do" }
+        { "label": "SINADEF", "href": "https://portalrcm.reniec.gob.pe/hechosvitales/Login.do" }
       ]
     },
     {

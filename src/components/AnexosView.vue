@@ -3,7 +3,7 @@
     <div class="row">
       <!-- Lista de hospitales con acordeón de anexos -->
       <div class="col-md-12 hospital-list">
-        <h3>Sede Administrativa</h3>
+        <h3>Red Asistencial La Libertad</h3>
         <ul class="list-group">
           <li
             v-for="hospital in hospitales"
