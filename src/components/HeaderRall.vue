@@ -15,7 +15,11 @@
         <!-- Opciones a la derecha -->
         <div class="ms-auto d-flex">
           <ul class="nav">
-            <li v-for="dropdown in dropdowns" :key="dropdown.label" class="nav-item dropdown">
+            <li 
+              v-for="dropdown in dropdowns" 
+              :key="dropdown.label" 
+              class="nav-item dropdown"
+            >
               <a 
                 class="nav-link dropdown-toggle" 
                 href="#"
@@ -26,31 +30,32 @@
               </a>
               <ul class="dropdown-menu">
                 <li 
-                  v-for="item in dropdown.items" :key="item.href">
-                  <a v-if="item.label != 'PACS' & item.label != 'ANEXOS'" 
+                  v-for="item in dropdown.items" 
+                  :key="item.href"
+                >
+                  <!-- PACS y Anexos como enlaces de router -->
+                  <router-link 
+                    v-if="item.label === 'PACS' || item.label === 'Anexos'"
+                    :to="item.href" 
+                    class="dropdown-item"
+                  >
+                    {{ item.label }}
+                  </router-link>
+
+                  <!-- El resto como enlaces externos en nueva pestaña -->
+                  <a 
+                    v-else 
+                    :href="item.href" 
                     class="dropdown-item" 
-                    target="_blank" 
-                    :href="item.href"
+                    target="_blank"
                   >
                     {{ item.label }}
                   </a>
-                  <router-link v-else-if="item.label == 'Anexos'"
-                    to="/anexos"
-                    class="dropdown-item"
-                  >
-                  ANEXOS
-                  </router-link>
-                  <router-link v-else
-                    to="/pacs"
-                    class="dropdown-item"
-                  >
-                  PACS
-                  </router-link>
                 </li>
               </ul>
             </li>
 
-            <!-- Dropdown de correos -->
+            <!-- Dropdown de correos (mantiene su estructura) -->
             <li class="nav-item dropdown">
               <a 
                 class="nav-link dropdown-toggle" 
@@ -91,12 +96,7 @@
 <script>
 import { onMounted } from 'vue';
 
-const vNewTab = {
-  mounted(el) {
-    el.setAttribute('target', '_blank');
-    el.setAttribute('rel', 'noopener noreferrer');
-  }
-};
+// Eliminamos el directive vNewTab ya que ahora usamos router-link para PACS y Anexos
 
 export default {
   name: "NavBar",
@@ -118,19 +118,17 @@ export default {
       console.error("❌ Error al cargar header.json:", error);
     }
   },
-  
 };
 </script>
 
 <style>
-/* Estilos generales */
+/* Los estilos se mantienen sin cambios */
 .logo-image {
   margin: 10px;
   height: 70px;
   object-fit: contain;
 }
 
-/* Título centrado */
 .titulo {
   color: #004fb7;
   font-weight: 700;
@@ -138,7 +136,6 @@ export default {
   text-transform: uppercase;
 }
 
-/* Estilos para enlaces */
 .nav-link {
   color: #0197fc;
   padding: 1rem 2rem;
@@ -168,7 +165,6 @@ export default {
   transform: scaleX(1);
 }
 
-/* Dropdowns */
 .dropdown-menu {
   margin-top: 0;
   border: 1px solid #dee2e6;
@@ -180,7 +176,6 @@ export default {
   display: block;
 }
 
-/* Ícono de correo */
 .dropdown-toggle > i {
   color: #0197fc;
   margin-left: 10px;
