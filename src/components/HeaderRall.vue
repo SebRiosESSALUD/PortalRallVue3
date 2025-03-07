@@ -82,7 +82,7 @@
                 <a 
                   class="dropdown-item" 
                   target="blank" 
-                  href="https://correo.essalid.gob.pe/"
+                  href="https://correo.essalud.gob.pe/"
                 >
                   Zymbra
                 </a>

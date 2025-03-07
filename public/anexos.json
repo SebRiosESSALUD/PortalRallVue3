@@ -1,23 +1,78 @@
 {
-    "hospitales": [
-      {
-        "id": 1,
-        "nombre": "Hospital Regional de Trujillo",
-        "anexos": [
-          { "numero": 2100, "descripcion": "Oficina de Informática" },
-          { "numero": 2101, "descripcion": "Recepción" },
-          { "numero": 2102, "descripcion": "Emergencias" }
-        ]
-      },
-      {
-        "id": 2,
-        "nombre": "Hospital Belén",
-        "anexos": [
-          { "numero": 2103, "descripcion": "Administración" },
-          { "numero": 2104, "descripcion": "Farmacia" },
-          { "numero": 2105, "descripcion": "Pediatría" }
-        ]
-      }
-    ]
-  }
-  
+  "hospitales": [
+    {
+      "id": 1,
+      "nombre": "Hospital Regional de Trujillo",
+      "anexos": [
+        { "numero": 2100, "descripcion": "Oficina de Informática" },
+        { "numero": 2101, "descripcion": "Recepción" },
+        { "numero": 2102, "descripcion": "Emergencias" }
+      ]
+    },
+    {
+      "id": 2,
+      "nombre": "Hospital Belén",
+      "anexos": [
+        { "numero": 2103, "descripcion": "Administración" },
+        { "numero": 2104, "descripcion": "Farmacia" },
+        { "numero": 2105, "descripcion": "Pediatría" }
+      ]
+    },
+    {
+      "id": 3,
+      "nombre": "Hospital Bicentenario Chao",
+      "anexos": [
+        { "numero": 3001, "descripcion": "JEFATURA ADMISIÓN Y CITAS" },
+        { "numero": 3002, "descripcion": "DIRECCIÓN" },
+        { "numero": 3003, "descripcion": "FARMACIA" },
+        { "numero": 3004, "descripcion": "EMERGENCIA - ADMISIÓN" },
+        { "numero": 3005, "descripcion": "SECRETARIA" },
+        { "numero": 3006, "descripcion": "ADMINISTRACIÓN" },
+        { "numero": 3007, "descripcion": "FACTURACIÓN" },
+        { "numero": 3008, "descripcion": "PLANIFICACIÓN" },
+        { "numero": 3009, "descripcion": "PATRIMONIO" },
+        { "numero": 3010, "descripcion": "RECURSOS HUMANOS" },
+        { "numero": 3011, "descripcion": "TRIAJE - ADMISIÓN" },
+        { "numero": 3012, "descripcion": "ADULTO MAYOR" },
+        { "numero": 3013, "descripcion": "ATENCIÓN ASEGURADO" },
+        { "numero": 3014, "descripcion": "ECOGRAFÍAS" },
+        { "numero": 3015, "descripcion": "LABORATORIO 01" },
+        { "numero": 3016, "descripcion": "LABORATORIO 02" },
+        { "numero": 3017, "descripcion": "SALA LECTURA" },
+        { "numero": 3018, "descripcion": "ODONTOLOGÍA" },
+        { "numero": 3019, "descripcion": "INMUNIZACIONES" },
+        { "numero": 3020, "descripcion": "CIRUGÍA GENERAL" },
+        { "numero": 3021, "descripcion": "MULTIESPECIALIDADES I" },
+        { "numero": 3022, "descripcion": "MULTIESPECIALIDADES II" },
+        { "numero": 3023, "descripcion": "MULTIESPECIALIDADES III" },
+        { "numero": 3024, "descripcion": "TÓPICO DE PROCEDIMIENTOS" },
+        { "numero": 3025, "descripcion": "CONSULTORIO NUTRICIÓN" },
+        { "numero": 3026, "descripcion": "CRECIMIENTO Y DESARROLLO" },
+        { "numero": 3027, "descripcion": "CONTROL DE GESTANTES" },
+        { "numero": 3028, "descripcion": "CONSULTORIO GINECO-OBSTETRICO" },
+        { "numero": 3029, "descripcion": "CENTRO QUIRÚRGICO" },
+        { "numero": 3030, "descripcion": "OPERADOR RED" },
+        { "numero": 3031, "descripcion": "CENTRO OBSTÉTRICO" },
+        { "numero": 3032, "descripcion": "VIGILANCIA 01" },
+        { "numero": 3033, "descripcion": "VIGILANCIA 02" },
+        { "numero": 3034, "descripcion": "HOSPITALIZACIÓN 01" },
+        { "numero": 3035, "descripcion": "HOSPITALIZACIÓN 02" },
+        { "numero": 3036, "descripcion": "HOSPITALIZACIÓN 03" },
+        { "numero": 3037, "descripcion": "HOSPITALIZACIÓN 04" },
+        { "numero": 3038, "descripcion": "ESTERILIZACIÓN" },
+        { "numero": 3039, "descripcion": "CONTROL SUMINISTROS" },
+        { "numero": 3040, "descripcion": "ADMISIÓN 02" },
+        { "numero": 3041, "descripcion": "OFICINA NUTRICIÓN" },
+        { "numero": 3042, "descripcion": "ALMACÉN MEDICAMENTOS" },
+        { "numero": 3043, "descripcion": "PREPARACIÓN FÓRMULAS" },
+        { "numero": 3044, "descripcion": "MANTENIMIENTO" },
+        { "numero": 3045, "descripcion": "TRIAJE - EMERGENCIA" },
+        { "numero": 3046, "descripcion": "ATENCIÓN INMEDIATA 01" },
+        { "numero": 3047, "descripcion": "VIGILANCIA PRINCIPAL" },
+        { "numero": 3048, "descripcion": "ADMISIÓN 01" },
+        { "numero": 3049, "descripcion": "ATENCIÓN INMEDIATA 02" },
+        { "numero": 3050, "descripcion": "SALA RAYOS X" }
+      ]
+    }
+  ]
+}
