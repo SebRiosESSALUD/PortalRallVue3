@@ -123,22 +123,21 @@ export default {
   },
   async created() {
     try {
-      const response = await fetch('/portalweb/header.json'); // ✅ Carga desde `public/`
+      const timestamp = new Date().getTime(); // Genera un número único basado en la hora actual
+      const url = "/portalweb/header.json?t=" + timestamp; // Forma concatenada para evitar errores del editor
+      const response = await fetch(url); // Añade el query string para romper caché
       if (!response.ok) throw new Error("No se pudo cargar header.json");
       
       const data = await response.json();
-      console.log("✅ header.json cargado:", data); // 🛠️ Debug en consola
+      console.log("✅ header.json cargado:", data); // Debug para verificar que se actualiza correctamente
 
       this.dropdowns = data;
     } catch (error) {
       console.error("❌ Error al cargar header.json:", error);
     }
-  },
-  
+  },
 };
 </script>
-
-
 
 <style>
 /* Estilos generales */

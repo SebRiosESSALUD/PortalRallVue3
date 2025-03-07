@@ -9,7 +9,9 @@
         { "label": "SIGI", "href": "http://172.20.0.122:8080/cittcontrol/" },
         { "label": "Infocal", "href": "http://infocal.essalud/index.php" },
         { "label": "Sin Anemia", "href": "http://10.0.0.217/" },
-        { "label": "Violencia Familiar", "href": "http://10.0.0.218/" }
+        { "label": "Violencia Familiar", "href": "http://10.0.0.218/" },
+        { "label": "IETSI", "href": "https://ietsi.essalud.gob.pe/farmacovigilancia-y-tecnovigilancia/" },
+        { "label": "Sist. Reg. HECHOS", "href": "https://portalrcm.reniec.gob.pe/hechosvitales/Login.do" }
       ]
     },
     {
