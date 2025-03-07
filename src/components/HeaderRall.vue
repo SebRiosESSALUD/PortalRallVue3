@@ -96,7 +96,12 @@
 <script>
 import { onMounted } from 'vue';
 
-// Eliminamos el directive vNewTab ya que ahora usamos router-link para PACS y Anexos
+const vNewTab = {
+  mounted(el) {
+    el.setAttribute('target', '_blank');
+    el.setAttribute('rel', 'noopener noreferrer');
+  }
+};
 
 export default {
   name: "NavBar",
@@ -107,11 +112,13 @@ export default {
   },
   async created() {
     try {
-      const response = await fetch('/portalweb/header.json');
+      const timestamp = new Date().getTime(); // Genera un número único basado en la hora actual
+      const url = "/portalweb/header.json?t=" + timestamp; // Forma concatenada para evitar errores del editor
+      const response = await fetch(url); // Añade el query string para romper caché
       if (!response.ok) throw new Error("No se pudo cargar header.json");
       
       const data = await response.json();
-      console.log("✅ header.json cargado:", data);
+      console.log("✅ header.json cargado:", data); // Debug para verificar que se actualiza correctamente
 
       this.dropdowns = data;
     } catch (error) {
@@ -122,7 +129,6 @@ export default {
 </script>
 
 <style>
-/* Los estilos se mantienen sin cambios */
 .logo-image {
   margin: 10px;
   height: 70px;
