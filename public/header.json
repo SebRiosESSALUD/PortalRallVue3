@@ -11,7 +11,9 @@
         { "label": "Sin Anemia", "href": "http://10.0.0.217/" },
         { "label": "Violencia Familiar", "href": "http://10.0.0.218/" },
         { "label": "IETSI", "href": "https://ietsi.essalud.gob.pe/farmacovigilancia-y-tecnovigilancia/" },
-        { "label": "SINADEF", "href": "https://portalrcm.reniec.gob.pe/hechosvitales/Login.do" }
+        { "label": "MiConsulta", "href": "https://miconsulta.essalud.gob.pe/auth/login" },
+        { "label": "CITT", "href": "https://apps.essalud.gob.pe/citt/#/consulta" },
+        { "label": "POSTAS", "href": "http://hise.essalud/POSTAS/" }
       ]
     },
     {
@@ -21,14 +23,16 @@
         { "label": "Intranet", "href": "http://intranet.essalud/portal/modules/news/" },
         { "label": "Sistema Rendiciones", "href": "http://10.15.4.30:8080/rendiciones/#/login" },
         { "label": "Mesa de Partes Digital", "href": "https://mpv.essalud.gob.pe/Login/Index " },
-        { "label": "Explota", "href": "http://appsgasistexpl.essalud.gob.pe/explotaDatos/index.html" }
+        { "label": "Explota", "href": "http://appsgasistexpl.essalud.gob.pe/explotaDatos/index.html" },
+        { "label": "Boletas de Pago", "href": "http://10.15.4.30:8080/sgper2/" },
+        { "label": "Convocatorias", "href": "http://convocatorias.essalud.gob.pe/" }
       ]
     },
     {
-      "label": "Recursos Humanos",
+      "label": "Entidades Externas",
       "items": [
-        { "label": "Boletas de Pago", "href": "http://10.15.4.30:8080/sgper2/" },
-        { "label": "Convocatorias", "href": "http://convocatorias.essalud.gob.pe/" }
+        { "label": "SINADEF", "href": "https://portalrcm.reniec.gob.pe/hechosvitales/Login.do" },
+        { "label": "HIS MINSA", "href": "https://websalud.minsa.gob.pe/hisminsa/" }
       ]
     },
     {
@@ -36,7 +40,7 @@
       "items": [
         { "label": "SCAI", "href": "http://10.15.4.30:8080/scai/" },
         { "label": "Nube/Cloud", "href": "http://10.15.4.25/index.php/login" },
-        { "label": "Anexos", "href": "/anexos" }
+        { "label": "Agenda por IPRESS", "href": "/anexos" }
       ]
     }
   ]

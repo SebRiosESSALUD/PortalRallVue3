@@ -3,6 +3,78 @@
     {
       "id": 1,
       "nombre": "Sede Administrativa",
+      "coordinadores": [
+        {
+          "cargo": "Gerente de Red Asistencial",
+          "celular": "947687845",
+          "numero": 15000
+        },
+        {
+          "cargo": "Responsable de Soporte Administrativo",
+          "celular": "949437541",
+          "numero": 15000
+        },
+        {
+          "cargo": "Jefatura de la Oficina de Soporte Informático",
+          "celular": "947687100",
+          "numero": 15000
+        },
+        {
+          "cargo": "Jefatura de la Oficina de Soporte Informático",
+          "celular": "949913937",
+          "numero": 15000
+        },
+        {
+          "cargo": "Jefatura de la Oficina de Soporte Informático",
+          "celular": "947664421",
+          "numero": 15000
+        },
+        {
+          "cargo": "Jefatura de la Oficina de Finanzas",
+          "celular": "949437545",
+          "numero": 15000
+        },
+        {
+          "cargo": "Coordinador de Facturación",
+          "celular": "947657288",
+          "numero": 15000
+        },
+        {
+          "cargo": "Jefatura de la Unidad de Administración de Recursos Humanos",
+          "celular": "961106851",
+          "numero": 15000
+        },
+        {
+          "cargo": "Jefatura de la Oficina de Soporte Informático",
+          "celular": "947664290",
+          "numero": 15000
+        },
+        {
+          "cargo": "Jefatura de la Unidad de Atención Primaria",
+          "celular": "961106922",
+          "numero": 15000
+        },
+        {
+          "cargo": "Jefatura de la Oficina de Soporte Informático",
+          "celular": "947664029",
+          "numero": 15000
+        },
+        {
+          "cargo": "Jefatura de la Unidad de Inteligencia Sanitaria Técnico Administrativo",
+          "celular": "949560872",
+          "numero": 15000
+        },
+        {
+          "cargo": "Jefatura de la Oficina de Soporte Informático",
+          "celular": "947687871",
+          "numero": 15000
+        },
+        {
+          "cargo": "Jefatura de la Oficina de Coordinación de Prestaciones y Atención Primaria",
+          "celular": "949437536",
+          "numero": 15000
+        }
+      ],
       "anexos": [
         { "numero": 2046, "descripcion": "OSI" },
         { "numero": 2051, "descripcion": "OSI CONTINGENCIA" },
@@ -12,6 +84,11 @@
     {
       "id": 2,
       "nombre": "Hospital Bicentenario Chao",
+      "coordinador": {
+        "cargo": "Coordinador de Administracion",
+        "celular": "943799968",
+        "numero": 444
+      },
       "anexos": [
         { "numero": 3001, "descripcion": "JEFATURA ADMISIÓN Y CITAS" },
         { "numero": 3002, "descripcion": "DIRECCIÓN" },
