@@ -32,7 +32,11 @@
       "label": "Entidades Externas",
       "items": [
         { "label": "SINADEF", "href": "https://portalrcm.reniec.gob.pe/hechosvitales/Login.do" },
-        { "label": "HIS MINSA", "href": "https://websalud.minsa.gob.pe/hisminsa/" }
+        { "label": "HIS MINSA", "href": "https://websalud.minsa.gob.pe/hisminsa/" },
+        { "label": "SIGTB", "href": "https://appsalud.minsa.gob.pe/sigtbdata/WFLogin.aspx?ReturnUrl=%2fsigtbdata%2fTBVerPacientes2.aspx" },
+        { "label": "NETLAB", "href": "https://netlabv2.ins.gob.pe/Login" },
+        { "label": "SIEpi-TB", "href": "https://tbc.dge.gob.pe/app3.0/inicio_sesion" },
+        { "label": "NOTI", "href": "https://noti.dge.gob.pe/" }
       ]
     },
     {
