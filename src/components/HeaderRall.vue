@@ -35,7 +35,7 @@
                 >
                   <!-- PACS y Anexos como enlaces de router -->
                   <router-link 
-                    v-if="item.label === 'PACS' || item.label === 'Anexos'"
+                    v-if=" item.label === 'PACS' || item.label === 'Agenda por IPRESS' "
                     :to="item.href" 
                     class="dropdown-item"
                   >

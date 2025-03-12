@@ -1,10 +1,9 @@
 <template>
-  <div class="container-fluid anexos-container mt-4 full-height">
-    <div class="row">
-      <!-- Lista de hospitales con acordeón de anexos -->
-      <div class="col-md-12 hospital-list">
-        <h3>Red Asistencial La Libertad</h3>
-        <ul class="list-group">
+  <div class="container-fluid anexos-container mt-4">
+    <div class="row justify-content-center">
+      <div class="col-lg-10 col-md-12 hospital-list">
+        <h3 class="text-center">Red Asistencial La Libertad</h3>
+        <ul class="list-group custom-list">
           <li
             v-for="hospital in hospitales"
             :key="hospital.id"
@@ -21,11 +20,20 @@
               </span>
             </div>
 
-            <!-- Acordeón de anexos -->
+            <!-- Contenido desplegable -->
             <transition name="fade">
-              <ul v-if="hospital.expanded" class="list-group mt-2">
+              <ul v-if="hospital.expanded" class="list-group mt-2 hospital-content">
+                <!-- Coordinadores -->
+                <li v-for="(coordinador, index) in hospital.coordinadores" :key="index" class="list-group-item">
+                  <strong>{{ coordinador.cargo }}</strong> - Celular: {{ coordinador.celular }}
+                </li>
+                <li v-for="(coordinador, index) in hospital.coordinadores" :key="'anexo-' + index" class="list-group-item">
+                  <strong>{{ coordinador.cargo }}</strong> - Anexo: {{ coordinador.numero }}
+                </li>
+
+                <!-- Anexos -->
                 <li v-for="anexo in hospital.anexos" :key="anexo.numero" class="list-group-item">
-                  {{ anexo.numero }} - {{ anexo.descripcion }}
+                  <strong>{{ anexo.descripcion }}</strong> - Anexo: {{ anexo.numero }}
                 </li>
               </ul>
             </transition>
@@ -58,7 +66,9 @@ export default {
           throw new Error("El JSON no contiene un array de 'hospitales'.");
         }
 
-        hospitales.value = data.hospitales; // Asignamos los hospitales correctamente
+        // Se asignan los datos directamente sin modificaciones
+        hospitales.value = data.hospitales;
+
         console.log("✅ anexos.json cargado correctamente:", hospitales.value);
 
       } catch (error) {
@@ -81,24 +91,53 @@ export default {
 };
 </script>
 
+
   
 <style scoped>
-
-
-.list-group-item {
-  cursor: pointer; /* Hace que el cursor cambie al hacer hover */
-  font-weight: bold;
+/* Estilos generales */
+.anexos-container {
+  background-color: #e3f2fd;
+  padding: 20px;
+  border-radius: 10px;
 }
 
+/* Estilos de la lista de hospitales */
+.custom-list {
+  max-height: 80vh; /* Limita la altura sin forzar scroll innecesario */
+  overflow-y: auto; /* Agrega barra de desplazamiento solo cuando es necesario */
+  border-radius: 10px;
+  background: white;
+  padding: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Hospital expandido */
 .list-group-item.active {
-  background-color: #e9ecef !important; /* Color de fondo más claro */
-  font-weight: bold; /* Resalta el texto */
-  color: #333 !important; /* Mantiene el color original del texto */
-
-  border-color: #007bff; /* Color diferente cuando está expandido */
-  background-color: #f8f9fa; /* Color de fondo si deseas resaltarlo */
+  background-color: #007bff !important;
+  color: white !important;
+  border-left: 5px solid #0056b3;
 }
 
+/* Estilos de los elementos dentro de cada hospital */
+.hospital-content {
+  background: #f8f9fa;
+  border-radius: 5px;
+  padding: 5px;
+}
 
+/* Mejora la visibilidad del nombre del hospital */
+.hospital-name {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* Mejoras para dispositivos móviles */
+@media (max-width: 768px) {
+  .custom-list {
+    max-height: 70vh;
+  }
+  .hospital-name {
+    font-size: 1rem;
+  }
+}
 </style>
-  
