@@ -1,0 +1,23 @@
+{
+    "centrales": [
+      { "region": "Amazonas", "numero": "(041) 579 500" },
+      { "region": "Ancash", "numero": "(043) 483 230" },
+      { "region": "Apurimac", "numero": "(083) 595 000" },
+      { "region": "Arequipa", "numero": "(054) 226 969" },
+      { "region": "Ayacucho", "numero": "(066) 490 000" },
+      { "region": "Cajamarca", "numero": "(076) 584 360" },
+      { "region": "Cusco", "numero": "(084) 581 150" },
+      { "region": "Huancavelica", "numero": "(067) 592 000" },
+      { "region": "Huánuco", "numero": "(062) 591 000" },
+      { "region": "Ica", "numero": "(056) 581 060" },
+      { "region": "La Libertad", "numero": "(044) 485 030" },
+      { "region": "Lambayeque", "numero": "(074) 481 060" },
+      { "region": "Loreto", "numero": "(065) 581 130" },
+      { "region": "Junín", "numero": "(064) 481 120" },
+      { "region": "Piura", "numero": "(073) 284 760" },
+      { "region": "Tacna", "numero": "(052) 583 060" },
+      { "region": "Tumbes", "numero": "(072) 596 500" },
+      { "region": "Ucayali", "numero": "(061) 586 090" }
+    ]
+  }
+  
