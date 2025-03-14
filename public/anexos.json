@@ -2,7 +2,7 @@
   "hospitales": [
     {
       "id": 1,
-      "nombre": "Sede Administrativa",
+      "nombre": "Sede Administrativa - Anexo Extendido: 462",
       "coordinadores": [
         {
           "cargo": "Gerente de Red Asistencial",
@@ -83,7 +83,7 @@
     },
     {
       "id": 2,
-      "nombre": "Hospital Bicentenario Chao",
+      "nombre": "Hospital Bicentenario Chao - Anexo Extendido: 152",
       "coordinador": {
         "cargo": "Coordinador de Administracion",
         "celular": "943799968",
