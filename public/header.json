@@ -25,7 +25,8 @@
         { "label": "Mesa de Partes Digital", "href": "https://mpv.essalud.gob.pe/Login/Index " },
         { "label": "Explota", "href": "http://appsgasistexpl.essalud.gob.pe/explotaDatos/index.html" },
         { "label": "Boletas de Pago", "href": "http://10.15.4.30:8080/sgper2/" },
-        { "label": "Convocatorias", "href": "http://convocatorias.essalud.gob.pe/" }
+        { "label": "Convocatorias", "href": "http://convocatorias.essalud.gob.pe/" },
+        { "label": "Papeletas", "href": "/papeletas" }
       ]
     },
     {
