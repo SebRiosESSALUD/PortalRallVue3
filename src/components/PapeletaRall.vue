@@ -206,18 +206,37 @@ export default {
                 
                 ],
                 
-                  ],margin: [0, 0, 0, 0],
+                  ],margin: [0, 5, 0, 0],
             },
 
               ]
         },
             
           
-        /*PARTE 4*/
+        /*PARTE 4
+
         {
               text: [
                 'SALIÓ: ',{text: formattedSalida, style: 'data'},'.\n',
                 'REGRESÓ: ',{text: formattedRegreso, style: 'data'},'.\n\n',
+                'OBSERVACIONES: ',{text: this.formData.observaciones, style: 'data'},'.\n',
+              ],
+              margin: [0, 10, 0, 0],
+              alignment: 'justify'
+          },*/
+
+          {
+          style: 'tableExample2',
+          table: {
+            body: [
+              ['SALIDA', {text: formattedSalida, style: 'data'} ],
+              ['RETORNO', {text: formattedRegreso, style: 'data'}]
+            ],
+          },
+          margin: [0,10, 0, 0],
+        },
+        {
+              text: [
                 'OBSERVACIONES: ',{text: this.formData.observaciones, style: 'data'},'.\n',
               ],
               margin: [0, 10, 0, 0],
