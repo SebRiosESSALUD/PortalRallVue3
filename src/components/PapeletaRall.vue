@@ -22,6 +22,7 @@ export default {
     return {
       hospitales: [],
       formData: {
+        planilla: '',
         jefePersonal: '',
         nombre: '',
         servicio: '',
@@ -110,6 +111,13 @@ export default {
               margin: [20, 30, 20, 0],
               style: 'header'
             },  
+            {
+                  text: [
+                  'CÓDIGO DE PLANILLA: ', {text: this.formData.planilla, style: 'data'},
+              ],
+              margin: [0, 5, 0, 0],
+              alignment: 'right'
+            },
                 /*PARTE 1*/
             {
                   text: [
@@ -161,8 +169,8 @@ export default {
             'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Malit profecta versatur nomine ocurreret multavit',*/
             {
               ol: [
-                  `Sin goce de haber (${this.formData.sinGoce ? 'X' : ' '})`,
-                  `A cuenta de vacaciones (${this.formData.vacaciones ? 'X' : ' '})`,
+                  `Sin goce de haber - Permiso Particular (${this.formData.sinGoce ? 'X' : ' '})`,
+                  `A cuenta de vacaciones - Permiso Personal (${this.formData.vacaciones ? 'X' : ' '})`,
                   
                 [
                   {
@@ -174,8 +182,7 @@ export default {
                             ul: [
                               `Por enfermedad (${this.formData.sinDescuentos[0].checked ? 'X' : ' '})`,
                               `Por capacitación (${this.formData.sinDescuentos[1].checked ? 'X' : ' '})`,
-                              `Por fallecimiento de familiares (${this.formData.sinDescuentos[2].checked ? 'X' : ' '})`,
-                              `Permiso particular (${this.formData.sinDescuentos[3].checked ? 'X' : ' '})`
+                              `Por fallecimiento de familiar directo (${this.formData.sinDescuentos[2].checked ? 'X' : ' '})`
                                 
                             ]
                           }
@@ -186,10 +193,9 @@ export default {
                           '\n',
                           {
                             ul: [
-                              `Permiso personal (${this.formData.sinDescuentos[4].checked ? 'X' : ' '})`,
-                              `Por onomástico (${this.formData.sinDescuentos[5].checked ? 'X' : ' '})`,
-                              `Por compensación (${this.formData.sinDescuentos[6].checked ? 'X' : ' '})`,
-                              `Por comisión de servicios (${this.formData.sinDescuentos[7].checked ? 'X' : ' '})`
+                              `Por onomástico (${this.formData.sinDescuentos[3].checked ? 'X' : ' '})`,
+                              `Por compensación (${this.formData.sinDescuentos[4].checked ? 'X' : ' '})`,
+                              `Por comisión de servicios (${this.formData.sinDescuentos[5].checked ? 'X' : ' '})`
                             ]
                           }
                                 ]
@@ -338,6 +344,11 @@ export default {
           </option>
 
         </select>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Código de Planilla:</label>
+        <input v-model="formData.planilla" type="text" class="form-control" />
       </div>
       
       <div class="mb-3">
