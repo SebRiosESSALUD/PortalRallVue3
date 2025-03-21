@@ -63,10 +63,34 @@ export default {
       }
     },
 
+    formatDate(dateString) {
+      if (!dateString) return '';
+      const d = new Date(dateString + 'T00:00:00');
+      const day = ('0' + d.getDate()).slice(-2);
+      const month = ('0' + (d.getMonth() + 1)).slice(-2);
+      const year = d.getFullYear();
+      return `${day}-${month}-${year}`;
+    },
+
     //Cosas del pdf make
     exportPDF() {
 
+      let formattedFecha = '';
+        if (this.formData.fecha) {
+          const d = new Date(this.formData.fecha + 'T00:00:00');
+          // Asegurarse de tener dos dígitos para día y mes
+          const day = ('0' + d.getDate()).slice(-2);
+          const month = ('0' + (d.getMonth() + 1)).slice(-2); // getMonth() es 0-indexado
+          const year = d.getFullYear();
+          formattedFecha = `${day}-${month}-${year}`;
+        }
+
       var hospitalName = document.getElementById('hospitalSelector').value;
+
+      const formattedFechaInicio = this.formatDate(this.formData.fechaInicio);
+      const formattedFechaFin = this.formatDate(this.formData.fechaFin);
+      const formattedSalida = this.formatDate(this.formData.salida);
+      const formattedRegreso = this.formatDate(this.formData.regreso);
 
       var docDefinition = {
         pageSize: 'A4',
@@ -102,7 +126,7 @@ export default {
                   '\n\nDon(ña):    ',{text: this.formData.nombre, style: 'data'},
                   {text: '   QUIEN PRESTA SERVICIOS en :   ' },{text: this.formData.servicio, style: 'data'},
                   '   A ÓRDENES DIRECTAS DEL SUSCRITO, SOLICITA PERMISO POR :   ',{text: this.formData.permisoPor, style: 'data'},'.',
-                  '\n\nA PARTIR DE:   ',{text: this.formData.fechaInicio, style: 'data'},' HASTA  ' ,{text: this.formData.fechaFin, style: 'data'},'.   ASUNTOS MOTIVADOS POR:  '
+                  '\n\nA PARTIR DE:   ',{text: formattedFechaInicio, style: 'data'},' HASTA  ' ,{text: formattedFechaFin, style: 'data'},'.   ASUNTOS MOTIVADOS POR:  '
                   ,'\n',{text: this.formData.motivo, style: 'data'},'.',
               ],
               margin: [0, 20, 0, 0],
@@ -132,7 +156,7 @@ export default {
                     /*PARTE 1*/
             {
                   text: [
-                  'Trujillo : ', {text: this.formData.fecha, style: 'data'},
+                  'Trujillo : ', {text: formattedFecha, style: 'data'},
               ],
               margin: [0, 5, 0, 0],
               alignment: 'right'
@@ -195,8 +219,8 @@ export default {
         /*PARTE 4*/
         {
               text: [
-                'SALIÓ: ',{text: this.formData.salida, style: 'data'},'.\n',
-                'REGRESÓ: ',{text: this.formData.regreso, style: 'data'},'.\n\n',
+                'SALIÓ: ',{text: formattedSalida, style: 'data'},'.\n',
+                'REGRESÓ: ',{text: formattedRegreso, style: 'data'},'.\n\n',
                 'OBSERVACIONES: ',{text: this.formData.observaciones, style: 'data'},'.\n',
               ],
               margin: [0, 10, 0, 0],
