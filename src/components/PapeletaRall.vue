@@ -75,20 +75,11 @@ export default {
     //Cosas del pdf make
     exportPDF() {
 
-      let formattedFecha = '';
-        if (this.formData.fecha) {
-          const d = new Date(this.formData.fecha + 'T00:00:00');
-          // Asegurarse de tener dos dígitos para día y mes
-          const day = ('0' + d.getDate()).slice(-2);
-          const month = ('0' + (d.getMonth() + 1)).slice(-2); // getMonth() es 0-indexado
-          const year = d.getFullYear();
-          formattedFecha = `${day}-${month}-${year}`;
-        }
-
       var hospitalName = document.getElementById('hospitalSelector').value;
 
       const formattedFechaInicio = this.formatDate(this.formData.fechaInicio);
       const formattedFechaFin = this.formatDate(this.formData.fechaFin);
+      const formattedFecha = this.formatDate(this.formData.fecha);
       const formattedSalida = this.formatDate(this.formData.salida);
       const formattedRegreso = this.formatDate(this.formData.regreso);
 
